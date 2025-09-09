@@ -1,6 +1,7 @@
-When using std::cin before std::getline it lefts '\n' in buffer skipping the entire input of getline();.
+#When using std::cin before std::getline it lefts '\n' in buffer skipping the entire input of getline();.
 So use std::getline(std::cin >> std::ws,string_name) ws=whitewash.
 
+#Ternary Operator
 
 #include<iostream>
 
@@ -10,12 +11,17 @@ int main(){
   return 0;
 }
 
-string.length() for length of the string.
-string.empty() returns a boolean value and checks if user didn't input the string.
-string.clear() clears the string.
-string.appeng("_____") appends to string.
-string.at(index) prints the data at that index.
-string.insert(index,"___") inserts a string from that index.
+#string.length() for length of the string.
+
+#string.empty() returns a boolean value and checks if user didn't input the string.
+
+#string.clear() clears the string.
+
+#string.appeng("_____") appends to string.
+
+#string.at(index) prints the data at that index.
+
+#string.insert(index,"___") inserts a string from that index.
 
 
 #include <iostream>
@@ -39,4 +45,14 @@ string.erase(i,e) deletes the string from i to e.
 
 For More - https://cplusplus.com/references/string.
 
+#foreach loop
 
+#include<iostream>
+
+int main(){
+  int arr[]={23,67,89};
+  for(int num: arr){
+    std::cout << num << '\n';
+  }
+  return 0;
+}
