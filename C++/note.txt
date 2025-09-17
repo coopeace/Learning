@@ -56,3 +56,43 @@ int main(){
   }
   return 0;
 }
+
+#function template
+
+#include<iostream>
+template<typename T,typename U>
+
+auto max(T x,U y){
+  return (x>y) ? x : y;
+}
+
+int main(){
+  std::cout << max(2.1,79) << '\n';
+  return 0;
+}
+
+#ENUMS
+
+#include<iostream>
+
+enum Car{Volkswagon,Fortuner,Gtr,Buggati};
+
+int main(){
+  Car fav = Gtr;
+  switch (fav) {
+    case Volkswagon:
+      std::cout << "Your favourite car is Volkswagon.\n";
+      break;
+    case Fortuner:
+      std::cout << "Your favourite car is Fortuner.\n";
+      break;
+    case Gtr:
+      std::cout << "Your favourite car is GTR.\n";
+      break;
+    case Buggati:
+      std::cout << "Your favourite car is Buggati.\n";
+      break;
+  }
+  return 0;
+}
+
