@@ -1,10 +1,11 @@
+#include <cstring>
 #include<iostream>
 
+using namespace std;
+
 int main(){
-  std::string cardnumber;
-  std::cout << "Enter a card number:";
-  std::cin >> cardnumber;
-  int i = cardnumber.size()-2;
-  std::cout << cardnumber[i] << '\n';
+  char name[] = "Shishir Dev";
+  char *s = name;
+  cout << "String Length: " << strlen(s) << endl;
   return 0;
 }

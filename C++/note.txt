@@ -96,3 +96,86 @@ int main(){
   return 0;
 }
 
+#Use of get and unget
+
+#include "iostream"
+
+using namespace std;
+
+int main()
+{
+    char ch;
+    cin >> ch;
+    char ch2;
+    cin.unget();
+    cin >> ch2;
+    cout << "read: " << ch << endl << "unget: " << ch2  << endl;
+
+    return 0;
+}
+
+//const + pointer 
+1. Pointer to Constant Data
+
+The House is locked. You can move your GPS to point to a different house, but you cannot change the furniture inside the house.
+
+    Syntax: const int* ptr (or int const * ptr)
+
+    Effect: You cannot change the value through the pointer.
+
+C++
+
+int x = 10, y = 20;
+const int* ptr = &x;
+
+*ptr = 15; // ERROR ❌ (Cannot change the house)
+ptr = &y;  // VALID ✅ (GPS can point elsewhere)
+
+2. Constant Pointer
+
+The GPS is locked. You are stuck pointing at one house forever, but you are allowed to go inside and change the furniture.
+
+    Syntax: int* const ptr
+
+    Effect: You cannot change the address stored in the pointer.
+
+C++
+
+int x = 10, y = 20;
+int* const ptr = &x;
+
+*ptr = 15; // VALID ✅ (Can change the house contents)
+ptr = &y;  // ERROR ❌ (GPS is glued to x)
+
+3. Constant Pointer to Constant Data
+
+Everything is locked. The GPS is glued to one house, and the house is boarded up.
+
+    Syntax: const int* const ptr
+
+    Effect: You cannot change the address OR the value.
+
+C++
+
+int x = 10;
+const int* const ptr = &x;
+
+*ptr = 15; // ERROR ❌
+ptr = &y;  // ERROR ❌
+
+4. Summary Cheat Sheet
+
+The easiest way to remember this is to draw a line through the asterisk (*):
+Syntax	Read it as...	What is Immutable?
+const int *p	"p points to a const int"	The Value (*p)
+int * const p	"p is a const pointer to int"	The Address (p)
+const int * const p	"p is a const pointer to a const int"	Both
+Why use const in Function Parameters?
+
+When you combine this with the references we discussed earlier, it becomes the "Gold Standard" for C++ performance:
+C++
+
+void printData(const int& x) { 
+    // Speed of a reference (no copying)
+    // Safety of const (function cannot change original x)
+}
