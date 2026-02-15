@@ -1,0 +1,5 @@
+/home/coopeace/Documents/Learning/HelloWorldGui/build/CMakeFiles/HelloWorldGui.dir
+/home/coopeace/Documents/Learning/HelloWorldGui/build/CMakeFiles/edit_cache.dir
+/home/coopeace/Documents/Learning/HelloWorldGui/build/CMakeFiles/rebuild_cache.dir
+/home/coopeace/Documents/Learning/HelloWorldGui/build/CMakeFiles/HelloWorldGui_autogen_timestamp_deps.dir
+/home/coopeace/Documents/Learning/HelloWorldGui/build/CMakeFiles/HelloWorldGui_autogen.dir

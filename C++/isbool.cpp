@@ -3,20 +3,25 @@
 
 using namespace std;
 
-bool isvowel(char ch){
+void isvowel(char ch,string &s){
   string vowels="AaEeIiOoUu";
-  return (vowels.find(ch)!=string::npos) ? true : false;
+  if(vowels.find(ch)!=string::npos)
+    s.insert(0,"An ");
 }
 
 int main(){
   char choice;
-  char x;
+  string str;
+  char ch;
   do{
-    cout << "Enter a char:";
-    cin >> x;
-    isvowel(x);
-    cout << "Press q for exit:";
+    cout << "Enter a sentence:";
+    getline(cin >> ws,str);
+    ch = str.at(0);
+    isvowel(ch,str);
+    cout << ">>" << str << endl;
+    cout << "\nPress q for exit:";
     cin >> choice;
+    cout << endl;
   }while(choice!='q');
   return 0;
 }

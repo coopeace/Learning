@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_HelloWorldGui_FILE /home/coopeace/Documents/Learning/HelloWorldGui/build/HelloWorldGui)
+set(__QT_DEPLOY_TARGET_HelloWorldGui_TYPE EXECUTABLE)

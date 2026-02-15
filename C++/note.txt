@@ -17,7 +17,7 @@ int main(){
 
 #string.clear() clears the string.
 
-#string.appeng("_____") appends to string.
+#string.append("_____") appends to string.
 
 #string.at(index) prints the data at that index.
 

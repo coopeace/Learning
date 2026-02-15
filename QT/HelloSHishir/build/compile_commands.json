@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/coopeace/Documents/Learning/HelloSHishir/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/coopeace/Documents/Learning/HelloSHishir/build/HelloShishir_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -std=gnu++17 -o CMakeFiles/HelloShishir.dir/HelloShishir_autogen/mocs_compilation.cpp.o -c /home/coopeace/Documents/Learning/HelloSHishir/build/HelloShishir_autogen/mocs_compilation.cpp",
+  "file": "/home/coopeace/Documents/Learning/HelloSHishir/build/HelloShishir_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/HelloShishir.dir/HelloShishir_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/coopeace/Documents/Learning/HelloSHishir/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/coopeace/Documents/Learning/HelloSHishir/build/HelloShishir_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -std=gnu++17 -o CMakeFiles/HelloShishir.dir/main.cpp.o -c /home/coopeace/Documents/Learning/HelloSHishir/main.cpp",
+  "file": "/home/coopeace/Documents/Learning/HelloSHishir/main.cpp",
+  "output": "CMakeFiles/HelloShishir.dir/main.cpp.o"
+}
+]
