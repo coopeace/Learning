@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_Tempearture_plus_Qtimer_FILE /home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/Tempearture_plus_Qtimer)
+set(__QT_DEPLOY_TARGET_Tempearture_plus_Qtimer_TYPE EXECUTABLE)

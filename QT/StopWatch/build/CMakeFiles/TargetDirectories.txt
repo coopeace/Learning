@@ -1,0 +1,5 @@
+/home/coopeace/Documents/Learning/QT/StopWatch/build/CMakeFiles/StopWatch.dir
+/home/coopeace/Documents/Learning/QT/StopWatch/build/CMakeFiles/edit_cache.dir
+/home/coopeace/Documents/Learning/QT/StopWatch/build/CMakeFiles/rebuild_cache.dir
+/home/coopeace/Documents/Learning/QT/StopWatch/build/CMakeFiles/StopWatch_autogen_timestamp_deps.dir
+/home/coopeace/Documents/Learning/QT/StopWatch/build/CMakeFiles/StopWatch_autogen.dir

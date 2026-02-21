@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Temperature_Converter.dir/link.d CMakeFiles/Temperature_Converter.dir/Temperature_Converter_autogen/mocs_compilation.cpp.o CMakeFiles/Temperature_Converter.dir/main.cpp.o CMakeFiles/Temperature_Converter.dir/temperature.cpp.o -o Temperature_Converter  /usr/lib64/libQt6Core.so.6.10.1

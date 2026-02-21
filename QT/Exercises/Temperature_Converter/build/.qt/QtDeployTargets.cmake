@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_Temperature_Converter_FILE /home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/Temperature_Converter)
+set(__QT_DEPLOY_TARGET_Temperature_Converter_TYPE EXECUTABLE)

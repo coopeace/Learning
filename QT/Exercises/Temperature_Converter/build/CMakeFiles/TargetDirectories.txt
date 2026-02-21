@@ -1,0 +1,5 @@
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/CMakeFiles/Temperature_Converter.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/CMakeFiles/edit_cache.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/CMakeFiles/rebuild_cache.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/CMakeFiles/Temperature_Converter_autogen_timestamp_deps.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/CMakeFiles/Temperature_Converter_autogen.dir

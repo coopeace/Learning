@@ -1,5 +1,4 @@
 #include <vector>
-#include <iostream>
 #include <string>
 using namespace std;
 
@@ -58,13 +57,3 @@ public:
         return res;
     }
 };
-
-int main(){
-  vector<string> words;
-  words = {"This","is","an","example","of","practice","makes","perfect"};
-  Solution s1;
-  s1.fullJustify(words,16);
-  cout << re << endl;
-
-  return 0;
-}

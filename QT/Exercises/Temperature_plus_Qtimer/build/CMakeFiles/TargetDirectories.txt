@@ -1,0 +1,5 @@
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/CMakeFiles/Tempearture_plus_Qtimer.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/CMakeFiles/edit_cache.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/CMakeFiles/rebuild_cache.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/CMakeFiles/Tempearture_plus_Qtimer_autogen_timestamp_deps.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/CMakeFiles/Tempearture_plus_Qtimer_autogen.dir

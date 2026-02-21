@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/TimerExamples/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/TimerExamples/build/TimerExamples_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/TimerExamples.dir/TimerExamples_autogen/mocs_compilation.cpp.o -c /home/coopeace/Documents/Learning/QT/TimerExamples/build/TimerExamples_autogen/mocs_compilation.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/TimerExamples/build/TimerExamples_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/TimerExamples.dir/TimerExamples_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/TimerExamples/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/TimerExamples/build/TimerExamples_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/TimerExamples.dir/main.cpp.o -c /home/coopeace/Documents/Learning/QT/TimerExamples/main.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/TimerExamples/main.cpp",
+  "output": "CMakeFiles/TimerExamples.dir/main.cpp.o"
+}
+]

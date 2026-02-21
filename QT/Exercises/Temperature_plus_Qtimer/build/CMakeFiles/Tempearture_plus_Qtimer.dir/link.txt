@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Tempearture_plus_Qtimer.dir/link.d CMakeFiles/Tempearture_plus_Qtimer.dir/Tempearture_plus_Qtimer_autogen/mocs_compilation.cpp.o CMakeFiles/Tempearture_plus_Qtimer.dir/main.cpp.o -o Tempearture_plus_Qtimer  /usr/lib64/libQt6Core.so.6.10.1

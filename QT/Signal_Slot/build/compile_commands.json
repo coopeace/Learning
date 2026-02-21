@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/HelloShishir/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/HelloShishir/build/HelloShishir_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/HelloShishir.dir/HelloShishir_autogen/mocs_compilation.cpp.o -c /home/coopeace/Documents/Learning/QT/HelloShishir/build/HelloShishir_autogen/mocs_compilation.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/HelloShishir/build/HelloShishir_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/HelloShishir.dir/HelloShishir_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/HelloShishir/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/HelloShishir/build/HelloShishir_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/HelloShishir.dir/main.cpp.o -c /home/coopeace/Documents/Learning/QT/HelloShishir/main.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/HelloShishir/main.cpp",
+  "output": "CMakeFiles/HelloShishir.dir/main.cpp.o"
+},
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/HelloShishir/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/HelloShishir/build/HelloShishir_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/HelloShishir.dir/sender.cpp.o -c /home/coopeace/Documents/Learning/QT/HelloShishir/sender.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/HelloShishir/sender.cpp",
+  "output": "CMakeFiles/HelloShishir.dir/sender.cpp.o"
+},
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/HelloShishir/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/HelloShishir/build/HelloShishir_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/HelloShishir.dir/receiver.cpp.o -c /home/coopeace/Documents/Learning/QT/HelloShishir/receiver.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/HelloShishir/receiver.cpp",
+  "output": "CMakeFiles/HelloShishir.dir/receiver.cpp.o"
+}
+]

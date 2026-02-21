@@ -1,0 +1,5 @@
+/home/coopeace/Documents/Learning/QT/HelloShishir/build/CMakeFiles/HelloShishir.dir
+/home/coopeace/Documents/Learning/QT/HelloShishir/build/CMakeFiles/edit_cache.dir
+/home/coopeace/Documents/Learning/QT/HelloShishir/build/CMakeFiles/rebuild_cache.dir
+/home/coopeace/Documents/Learning/QT/HelloShishir/build/CMakeFiles/HelloShishir_autogen_timestamp_deps.dir
+/home/coopeace/Documents/Learning/QT/HelloShishir/build/CMakeFiles/HelloShishir_autogen.dir

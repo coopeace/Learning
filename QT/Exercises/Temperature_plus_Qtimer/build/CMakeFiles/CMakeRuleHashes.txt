@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+12a35d0ca4184c5a7aa4fc36a0ebabc8 CMakeFiles/Tempearture_plus_Qtimer_autogen
+5f33aab81a32411f60d011ef76a6b852 Tempearture_plus_Qtimer_autogen/timestamp

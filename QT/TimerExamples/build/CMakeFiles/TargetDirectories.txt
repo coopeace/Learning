@@ -1,0 +1,5 @@
+/home/coopeace/Documents/Learning/QT/TimerExamples/build/CMakeFiles/TimerExamples.dir
+/home/coopeace/Documents/Learning/QT/TimerExamples/build/CMakeFiles/edit_cache.dir
+/home/coopeace/Documents/Learning/QT/TimerExamples/build/CMakeFiles/rebuild_cache.dir
+/home/coopeace/Documents/Learning/QT/TimerExamples/build/CMakeFiles/TimerExamples_autogen_timestamp_deps.dir
+/home/coopeace/Documents/Learning/QT/TimerExamples/build/CMakeFiles/TimerExamples_autogen.dir

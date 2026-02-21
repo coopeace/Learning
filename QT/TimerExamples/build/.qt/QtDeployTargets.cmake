@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_TimerExamples_FILE /home/coopeace/Documents/Learning/QT/TimerExamples/build/TimerExamples)
+set(__QT_DEPLOY_TARGET_TimerExamples_TYPE EXECUTABLE)

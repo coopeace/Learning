@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/StopWatch.dir/link.d CMakeFiles/StopWatch.dir/StopWatch_autogen/mocs_compilation.cpp.o CMakeFiles/StopWatch.dir/main.cpp.o CMakeFiles/StopWatch.dir/stopwatch.cpp.o -o StopWatch  /usr/lib64/libQt6Core.so.6.10.1

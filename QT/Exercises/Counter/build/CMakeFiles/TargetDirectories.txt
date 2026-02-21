@@ -1,0 +1,5 @@
+/home/coopeace/Documents/Learning/QT/Exercises/Counter/build/CMakeFiles/Counter.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Counter/build/CMakeFiles/edit_cache.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Counter/build/CMakeFiles/rebuild_cache.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Counter/build/CMakeFiles/Counter_autogen_timestamp_deps.dir
+/home/coopeace/Documents/Learning/QT/Exercises/Counter/build/CMakeFiles/Counter_autogen.dir

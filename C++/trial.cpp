@@ -1,11 +1,25 @@
-#include <cstring>
-#include<iostream>
+#include <iostream>
+#include <ostream>
 
-using namespace std;
+class Numbers{
+  private:
+    int x;
+  public:
+    Numbers(int value) : x(value){}  
+    void changeNumber(){
+      x=35;
+    }
+    void display(){
+      std::cout << "X:" << x << std::endl;
+    }
+};
 
-int main(){
-  char name[] = "Shishir Dev";
-  char *s = name;
-  cout << "String Length: " << strlen(s) << endl;
+
+int main () {
+  Numbers num(8);
+  num.display();
+  num.changeNumber();
+  num.display();
+  std::cout << sizeof(num) << std::endl;
   return 0;
 }

@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/Tempearture_plus_Qtimer_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/Tempearture_plus_Qtimer.dir/Tempearture_plus_Qtimer_autogen/mocs_compilation.cpp.o -c /home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/Tempearture_plus_Qtimer_autogen/mocs_compilation.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/Tempearture_plus_Qtimer_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/Tempearture_plus_Qtimer.dir/Tempearture_plus_Qtimer_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/build/Tempearture_plus_Qtimer_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/Tempearture_plus_Qtimer.dir/main.cpp.o -c /home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/main.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_plus_Qtimer/main.cpp",
+  "output": "CMakeFiles/Tempearture_plus_Qtimer.dir/main.cpp.o"
+}
+]

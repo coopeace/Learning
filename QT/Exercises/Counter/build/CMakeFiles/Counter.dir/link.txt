@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Counter.dir/link.d CMakeFiles/Counter.dir/Counter_autogen/mocs_compilation.cpp.o CMakeFiles/Counter.dir/main.cpp.o -o Counter  /usr/lib64/libQt6Core.so.6.10.1

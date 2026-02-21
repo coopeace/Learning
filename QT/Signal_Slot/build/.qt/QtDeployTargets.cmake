@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_HelloShishir_FILE /home/coopeace/Documents/Learning/QT/HelloShishir/build/HelloShishir)
+set(__QT_DEPLOY_TARGET_HelloShishir_TYPE EXECUTABLE)

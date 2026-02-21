@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/Temperature_Converter_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/Temperature_Converter.dir/Temperature_Converter_autogen/mocs_compilation.cpp.o -c /home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/Temperature_Converter_autogen/mocs_compilation.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/Temperature_Converter_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/Temperature_Converter.dir/Temperature_Converter_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/Temperature_Converter_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/Temperature_Converter.dir/main.cpp.o -c /home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/main.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/main.cpp",
+  "output": "CMakeFiles/Temperature_Converter.dir/main.cpp.o"
+},
+{
+  "directory": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NO_DEBUG -I/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/build/Temperature_Converter_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -std=gnu++17 -o CMakeFiles/Temperature_Converter.dir/temperature.cpp.o -c /home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/temperature.cpp",
+  "file": "/home/coopeace/Documents/Learning/QT/Exercises/Temperature_Converter/temperature.cpp",
+  "output": "CMakeFiles/Temperature_Converter.dir/temperature.cpp.o"
+}
+]
