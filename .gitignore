@@ -21,6 +21,8 @@ x64/
 *.dll
 *.so
 *.dylib
+.cache/
+*CMakeLists.txt
 
 # IDE
 .vscode/
