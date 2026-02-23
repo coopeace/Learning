@@ -1,1 +1,36 @@
-C++/build/
+/C++/build/
+
+# Qt
+*.pro.user*
+*.pro.user.*
+*.qbs.user*
+*.qbs.user.*
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+*.o
+*.obj
+
+# Build directories
+build/
+Debug/
+Release/
+x64/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
