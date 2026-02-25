@@ -22,7 +22,6 @@ x64/
 *.so
 *.dylib
 .cache/
-*CMakeLists.txt
 
 # IDE
 .vscode/

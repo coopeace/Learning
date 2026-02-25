@@ -8,7 +8,7 @@ class Temperature : public QObject {
   Q_OBJECT
   private:
     double m_celsius, m_fahrenheit;
-    QTimer *m_timer = new QTimer(this);
+    QTimer *m_timer;
   public:
     explicit Temperature(QObject *parent = nullptr);
     void temperatureInCelsius(double c);

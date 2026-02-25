@@ -3,6 +3,7 @@
 
 Temperature::Temperature(QObject *parent) 
   : QObject(parent), m_celsius(0), m_fahrenheit(0) {
+    m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &Temperature::onTimerTick);
   }
 

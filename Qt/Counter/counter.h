@@ -4,7 +4,6 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QTimer>
-#include <qobject.h>
 
 class Counter: public QObject{
   Q_OBJECT
@@ -12,9 +11,10 @@ class Counter: public QObject{
     int m_seconds;
     int m_progress;
     int init_seconds;
-    QTimer *m_timer = new QTimer(this);
+    QTimer *m_timer;
   public:
     explicit Counter(QObject *parent = nullptr): QObject(parent),m_seconds(30),m_progress(0){
+      m_timer = new QTimer(this);
       connect(m_timer,&QTimer::timeout,this,&Counter::progressOn);
       init_seconds = m_seconds;
     }
