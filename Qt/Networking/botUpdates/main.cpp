@@ -11,12 +11,10 @@ int main (int argc, char *argv[]) {
         qFatal("TELEGRAM_TOKEN not set in environment!");
     }
 
-    // 1. Initialize Components
     TelegramClient client(token, &app);
     UpdateDispatcher dispatcher(&app);
     CommandRouter router(&client, &app);
 
-    // 2. Wire the flow
     // Flow: updatesReceived -> UpdateDispatcher::onUpdatesReceived
     QObject::connect(&client, &TelegramClient::updatesReceived, 
                      &dispatcher, &UpdateDispatcher::onUpdatesReceived);
@@ -25,7 +23,7 @@ int main (int argc, char *argv[]) {
     QObject::connect(&dispatcher, &UpdateDispatcher::messageReceived, 
                      &router, &CommandRouter::onMessageReceived);
 
-    // 3. Setup Polling Timer
+
     QTimer timer(&app);
     QObject::connect(&timer, &QTimer::timeout, [&client, &dispatcher]() {
         client.getUpdates(dispatcher.lastUpdateId());
