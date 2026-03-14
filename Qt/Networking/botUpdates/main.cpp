@@ -1,40 +1,44 @@
 #include <QCoreApplication>
-#include <QNetworkAccessManager>
-#include <QNetworkRequest>
-#include <QNetworkReply>
-#include <QBitArray>
-#include <QJsonDocument>
 #include <QTimer>
+#include <QString>
+#include "bot.h"
 
 int main (int argc, char *argv[]) {
-  QCoreApplication app(argc,argv);
+    QCoreApplication app(argc, argv);
 
-  QNetworkAccessManager *manager = new QNetworkAccessManager(&app);
+    QString token = qEnvironmentVariable("TELEGRAM_TOKEN");
+    if (token.isEmpty()) {
+        qFatal("TELEGRAM_TOKEN not set in environment!");
+    }
 
-  QUrl url("https://api.telegram.org/bot<api>/getUpdates");
+    // 1. Initialize Components
+    TelegramClient client(token, &app);
+    UpdateDispatcher dispatcher(&app);
+    CommandRouter router(&client, &app);
 
-  QNetworkRequest request(url);
+    // 2. Wire the flow
+    // Flow: updatesReceived -> UpdateDispatcher::onUpdatesReceived
+    QObject::connect(&client, &TelegramClient::updatesReceived, 
+                     &dispatcher, &UpdateDispatcher::onUpdatesReceived);
 
-  // QTimer *timer = new QTimer(&app);
-  //
-  // QTimer::connect(timer,&QTimer::timeout,[&](){
-  // QNetworkReply *reply = manager->get(request); 
-  //     });
-  //
-  // timer->start(5000);
+    // Flow: messageReceived -> CommandRouter::onMessageReceived
+    QObject::connect(&dispatcher, &UpdateDispatcher::messageReceived, 
+                     &router, &CommandRouter::onMessageReceived);
 
-  QTimer::singleShot(1000,[&](){
-      QNetworkReply *reply = manager->get(request); 
+    // 3. Setup Polling Timer
+    QTimer timer(&app);
+    QObject::connect(&timer, &QTimer::timeout, [&client, &dispatcher]() {
+        client.getUpdates(dispatcher.lastUpdateId());
+    });
 
-      QObject::connect(reply,&QNetworkReply::finished,[reply](){
-          QByteArray data = reply->readAll();
-          QJsonDocument doc = QJsonDocument::fromJson(data);
-          qInfo().noquote() << doc.toJson(QJsonDocument::Indented);
+    // Start polling every 3 seconds
+    timer.start(3000);
+    
+    // Immediate first update
+    QTimer::singleShot(0, [&client, &dispatcher]() {
+        client.getUpdates(dispatcher.lastUpdateId());
+    });
 
-          reply->deleteLater();
-          });
-
-      });
-
-  return app.exec();
+    qInfo() << "Bot is running...";
+    return app.exec();
 }
