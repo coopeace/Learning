@@ -179,3 +179,7 @@ void printData(const int& x) {
     // Speed of a reference (no copying)
     // Safety of const (function cannot change original x)
 }
+
+std::cout //normal Output
+std::cerr //For ERROR its reliable.its works perfectly no buffer
+std::clog //For Logging
