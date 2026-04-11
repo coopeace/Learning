@@ -1,4 +1,4 @@
-/C++/build/
+*.vim
 
 # Qt
 *.pro.user*
@@ -22,6 +22,7 @@ x64/
 *.so
 *.dylib
 .cache/
+.clangd
 
 # IDE
 .vscode/
@@ -35,3 +36,9 @@ Thumbs.db
 
 # Logs
 *.log
+*.txt
+!.CMakeLists.txt
+
+# Enviornment Variables
+*.env
+C++/remember.md
