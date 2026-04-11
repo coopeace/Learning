@@ -183,3 +183,22 @@ void printData(const int& x) {
 std::cout //normal Output
 std::cerr //For ERROR its reliable.its works perfectly no buffer
 std::clog //For Logging
+
+ios :: app    ->     Append to end-of-file
+ios :: ate    ->     Go to end-of-file on opening
+ios :: binary   ->     Binary file
+ios :: in   ->     Open file for reading only
+ios :: nocreate   ->     Open fails if the file does not exist
+ios :: noreplace    ->     Open fails if the file already exists
+ios :: out    ->     Open file for writing only
+ios :: trunc    ->     Delete the contents of the file if it exists
+
+  ## The fstream class does not provide a mode by default and
+therefore, we must provide the mode explicitly when using an
+object of fstream class.
+
+  ## The mode can combine two or more parameters using the
+bitwise OR operator (symbol I) as shown below:
+fout.open(“data”, ios::app | ios:: nocreate)
+This opens the file in the append mode but fails to open the file if it
+does not exist.
