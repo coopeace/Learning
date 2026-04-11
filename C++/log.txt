@@ -1,7 +1,0 @@
-Program started
-Processing value: 1
-Processing value: 2
-Processing value: 3
-Processing value: 4
-Processing value: 5
-Processing complete
