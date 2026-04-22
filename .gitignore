@@ -41,4 +41,10 @@ Thumbs.db
 
 # Enviornment Variables
 *.env
+*.venv
+
+# File 
 C++/remember.md
+
+# python cache
+__pycache__
