@@ -38,6 +38,7 @@ Thumbs.db
 *.log
 *.txt
 !.CMakeLists.txt
+!requirements.txt
 
 # Enviornment Variables
 *.env
@@ -45,6 +46,9 @@ Thumbs.db
 
 # File 
 C++/remember.md
+
+# Folder
+Shell_scripting/
 
 # python cache
 __pycache__

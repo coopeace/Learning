@@ -1,5 +1,5 @@
-def get_name_with_age( name : str, age : int ):
-    name_with_age = name + " is " + str(age) + " years old."
-    return name_with_age
+adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
 
-print(get_name_with_age("Shishir",21))
+for x,y in adj,fruits:
+    print(x, y)
