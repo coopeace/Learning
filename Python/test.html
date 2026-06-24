@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VALORANT NEXUS | Agents &amp; Meta Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(31, 35, 38, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(171, 136, 135, 0.2);
+        }
+        .agent-card-hover:hover {
+            box-shadow: 0px 0px 15px rgba(255, 70, 85, 0.3);
+            border-color: #ffb3b2;
+            transform: translateY(-4px);
+        }
+        .glitch-transition {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a141e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2c3641;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffb3b2;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#680013",
+                      "primary-container": "#ff525d",
+                      "on-primary-fixed-variant": "#92001f",
+                      "background": "#0a141e",
+                      "on-background": "#d9e3f2",
+                      "surface-container-high": "#212b35",
+                      "tertiary-fixed-dim": "#c4c6ce",
+                      "secondary-fixed-dim": "#c4c7cb",
+                      "on-error": "#690005",
+                      "inverse-surface": "#d9e3f2",
+                      "on-surface": "#d9e3f2",
+                      "secondary-fixed": "#e0e3e7",
+                      "error": "#ffb4ab",
+                      "surface-container": "#17202b",
+                      "on-tertiary-fixed-variant": "#44474d",
+                      "secondary-container": "#464a4d",
+                      "surface-bright": "#303a45",
+                      "surface-container-highest": "#2c3641",
+                      "on-secondary-container": "#b5b9bc",
+                      "data-green": "#00FF7F",
+                      "on-tertiary-fixed": "#191c21",
+                      "surface-tint": "#ffb3b2",
+                      "on-tertiary-container": "#272a30",
+                      "on-primary-container": "#5b000f",
+                      "surface-container-low": "#121c27",
+                      "radiant-white": "#FFFFFF",
+                      "inverse-primary": "#bd0c2d",
+                      "surface-dim": "#0a141e",
+                      "on-secondary-fixed": "#181c1f",
+                      "primary-fixed-dim": "#ffb3b2",
+                      "surface-variant": "#2c3641",
+                      "primary-fixed": "#ffdad9",
+                      "on-surface-variant": "#e4bdbc",
+                      "on-primary-fixed": "#410008",
+                      "primary": "#ffb3b2",
+                      "error-container": "#93000a",
+                      "tertiary-container": "#8e9198",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-lowest": "#050f19",
+                      "outline-variant": "#5b403f",
+                      "tertiary-fixed": "#e0e2ea",
+                      "warning-amber": "#FFB800",
+                      "on-tertiary": "#2d3036",
+                      "outline": "#ab8887",
+                      "surface": "#0a141e",
+                      "surface-glass": "rgba(31, 35, 38, 0.7)",
+                      "secondary": "#c4c7cb",
+                      "inverse-on-surface": "#27313c",
+                      "tertiary": "#c4c6ce",
+                      "on-secondary": "#2d3134",
+                      "on-secondary-fixed-variant": "#43474a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "container-max": "1440px",
+                      "margin-desktop": "40px",
+                      "unit": "4px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-xl": ["Montserrat"],
+                      "body-md": ["Inter"],
+                      "stat-value": ["JetBrains Mono"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Montserrat"],
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-md": ["Montserrat"]
+              },
+              "fontSize": {
+                      "display-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                      "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "stat-value": ["24px", {"lineHeight": "1", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 z-50 w-full bg-surface-glass backdrop-blur-xl border-b border-surface-variant/20 shadow-[0px_0px_15px_rgba(255,70,85,0.1)]">
+<div class="flex justify-between items-center px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-12">
+<a class="font-headline-md text-headline-md font-black tracking-tighter text-primary" href="#">VALORANT NEXUS</a>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1" href="#">Agents</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Maps</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Meta</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Analytics</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Patch Notes</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border border-outline/20 rounded-lg px-4 py-2 text-body-md w-64 focus:outline-none focus:border-primary/50 transition-all" placeholder="Search Agents..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-on-surface-variant">search</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-bright/10 rounded-full transition-all duration-200">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-bright/10 rounded-full transition-all duration-200">
+<span class="material-symbols-outlined text-primary">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/30">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLugDuVAXjAUGTJz4QmKzxgGafvdF9eU6DbqvK1BZAgdcFqNcTvs5Mzk4lNk2uB1XFSl1KDA6aRBJDzmYv5INDJplEqBbfgI7JyJAoSHNuXwaGLqhIDit3c_Rc5rkUpHW3R0EOHYLcQJ1KyKLDBfQoMe1UwYMvhR9p-z6VL6uzmQOi3vWEuZmZo3vJfV1X8Rs1pRFX6bi-nr5HKj-bWGi9EXyD5TFXEs_5JqwiBF19ohbhpapvfudgnk2ag"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Section & Filters -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
+<div>
+<h1 class="font-display-xl text-display-xl text-primary mb-2">AGENTS PROTOCOL</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Browse the global roster of elite tacticians. Filter by role to find the perfect match for your squad's composition.</p>
+</div>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded bg-primary text-on-primary font-label-caps text-label-caps hover:shadow-[0px_0px_15px_rgba(255,70,85,0.4)] transition-all">ALL AGENTS</button>
+<button class="px-6 py-2 rounded bg-surface-container border border-outline/20 font-label-caps text-label-caps text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all">DUELIST</button>
+<button class="px-6 py-2 rounded bg-surface-container border border-outline/20 font-label-caps text-label-caps text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all">INITIATOR</button>
+<button class="px-6 py-2 rounded bg-surface-container border border-outline/20 font-label-caps text-label-caps text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all">SENTINEL</button>
+<button class="px-6 py-2 rounded bg-surface-container border border-outline/20 font-label-caps text-label-caps text-on-surface-variant hover:border-primary/50 hover:text-primary transition-all">CONTROLLER</button>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Agent Grid -->
+<div class="col-span-12 lg:col-span-8 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Jett (Active) -->
+<div class="glass-card agent-card-hover rounded-xl overflow-hidden group relative cursor-pointer border-primary/50 ring-2 ring-primary/20">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A stylized digital illustration of a nimble female agent with silver-white hair and blue glowing energy, set against a dark, futuristic urban skyline. The character wears tactical minimalist gear. The lighting is dramatic, with sharp cyan highlights and deep crimson shadows, reflecting a high-stakes competitive esports aesthetic with a professional dark mode finish." src="https://lh3.googleusercontent.com/aida/AP1WRLsHM91nNSAXQg_5046kqr2nL_azJkzLpZmo1DC2eT4NDNh_blEp1vQhsjl29VSR6KaGkDHYQK1Z286PnNAWEGFAVDjx42hppt1mx6BJgw-Jbc1fLaEB2mga7piCxqdnslfEvzuJ4wepxii8QZ-eLEkmSZ0kBtwv2SZmeaJczxEi-MU4xwlqsL8C1kBb-5cHwYuO-krlI0CfJZ36w6Oq4Eg-NctwOHmXUog5fn5k5LyPjZW279qsSCX2Ii0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4">
+<span class="font-label-caps text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded border border-primary/30">S-TIER</span>
+<h3 class="font-headline-md text-headline-md text-white mt-1">JETT</h3>
+</div>
+<div class="absolute top-4 right-4 bg-background/80 p-1.5 rounded-lg border border-outline/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-xl">bolt</span>
+</div>
+</div>
+</div>
+<!-- Reyna -->
+<div class="glass-card agent-card-hover rounded-xl overflow-hidden group relative cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="A portrait of a mysterious purple-themed female combatant with glowing violet eyes, radiating dark energy in a high-tech underground laboratory setting. The atmosphere is intense and moody, featuring deep blacks and vibrant neon purple accents. The digital art style is sharp and cinematic, matching a premium gaming dashboard aesthetic with glassmorphism elements." src=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4">
+<span class="font-label-caps text-[10px] bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded border border-outline/20">A-TIER</span>
+<h3 class="font-headline-md text-headline-md text-white mt-1">REYNA</h3>
+</div>
+<div class="absolute top-4 right-4 bg-background/80 p-1.5 rounded-lg border border-outline/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-xl">bolt</span>
+</div>
+</div>
+</div>
+<!-- Killjoy -->
+<div class="glass-card agent-card-hover rounded-xl overflow-hidden group relative cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="A brilliant young female inventor wearing yellow glasses and tech-oriented urban wear, surrounded by robotic sentries and holographic blueprints in a clean, modern lab. The color palette is dominated by tech-yellow and cool slate grays. The lighting is bright but high-contrast, fitting a tactical data-viz tool aesthetic." src="https://lh3.googleusercontent.com/aida/AP1WRLvsia1es1cWdhuC2xP9JC_1jdbSPmVYcrLghFhqRj7uc46wRBfNGSNH-fodVA_Iw6NLj1qPto3hHmI18FRECbApjGxse4k-ltBWsGapqZ1pmDZjX-XHkUiQ5QtrERzIk9wnfq2-ygt_kdnfSGinc18VFvRPGaiL49DoXK9H6_KUNYGiSmPAy-KKtIDPLrkV1XCVRfGs4JpxD8H9KQHS_9lzz-pmJHDf9-tTRw7ldfXYYIpR3SWFbKLDiNw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4">
+<span class="font-label-caps text-[10px] bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded border border-outline/20">S-TIER</span>
+<h3 class="font-headline-md text-headline-md text-white mt-1">KILLJOY</h3>
+</div>
+<div class="absolute top-4 right-4 bg-background/80 p-1.5 rounded-lg border border-outline/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-xl">shield</span>
+</div>
+</div>
+</div>
+<!-- Sova -->
+<div class="glass-card agent-card-hover rounded-xl overflow-hidden group relative cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="A blonde archer in blue winter tactical gear, holding a high-tech energy bow amidst a snowy, desolate landscape at twilight. The scene is illuminated by the bow's blue electric glow and soft moonlight. The visual style is highly detailed and cinematic, using cool tones with sharp red accents to denote a professional gaming environment." src="https://lh3.googleusercontent.com/aida/AP1WRLuH2w0HHIg3895hnPH2SvmQetcYLzg9obO4jXAzhB7wkSRa82NMBitJPjNMe7L-OsKdqk6QbLv5sMtY8GYalHx3U976XuxqeRyk-deW4CtWbg8fd5o1SbbXip9ILdVfhsX6TGmUbsvW8teGr_NV5PrRhVCuuv30IT0gLxFpL8rzwtQMB4OPtUUarjnNIxwPgRh3EVRkWm2hbKArzgd2rwB0tft02-ss3sBSR-MIwzoMxzfnXxMtGcd7SnE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4">
+<span class="font-label-caps text-[10px] bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded border border-outline/20">A-TIER</span>
+<h3 class="font-headline-md text-headline-md text-white mt-1">SOVA</h3>
+</div>
+<div class="absolute top-4 right-4 bg-background/80 p-1.5 rounded-lg border border-outline/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-xl">explore</span>
+</div>
+</div>
+</div>
+<!-- Omen -->
+<div class="glass-card agent-card-hover rounded-xl overflow-hidden group relative cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="A shadowy, ethereal figure in tattered dark robes with glowing blue horizontal slits for eyes, dissolving into dark smoke. The background is a haunting, geometric abstract space. The palette features deep midnight blues, blacks, and sharp glowing cyans. The overall mood is mysterious and intimidating, fitting a high-performance tactical interface." src="https://lh3.googleusercontent.com/aida/AP1WRLsFiRmplQX9qkWZgs-20p1xOcYKcBqmgdocHJgLjJZWyiOQUAtf2xf3kJX00UJlXefKv0_lv1kbvMRVpnf3b1dVUSQ3h9RiK22sfHKQzKISp2E1jJ_2-WbKpr3iztJ3B5Ezq_LnB9C8VkS8TA_9KsKfDPekGSLoV6UfNBKW1jc9IjyaLQGDw6RJQoTBVaA0X7pchLEtDvt4ZKNxEauc3Bo7wOItwPGF5yFhvq8PHD8gtgEsQKDu9vyH5eA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4">
+<span class="font-label-caps text-[10px] bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded border border-outline/20">B-TIER</span>
+<h3 class="font-headline-md text-headline-md text-white mt-1">OMEN</h3>
+</div>
+<div class="absolute top-4 right-4 bg-background/80 p-1.5 rounded-lg border border-outline/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-xl">visibility_off</span>
+</div>
+</div>
+</div>
+<!-- Sage -->
+<div class="glass-card agent-card-hover rounded-xl overflow-hidden group relative cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="A serene female warrior with long black hair, manipulating glowing jade orbs in a tranquil mountain temple setting. The lighting is soft and spiritual, with heavy reliance on jade green and cool white highlights. The image quality is sharp with a digital painting aesthetic that emphasizes texture and glowing effects." src="https://lh3.googleusercontent.com/aida/AP1WRLtDLKQKCZ49M-_dZ1CIHpcdBBcbM1xRYO9EA3RWmszwx2imFuhSwPGVOtF6GlpFRV46EmzfN2cCgzLHW-7_CqeoILg5ycY9Kl5_xMCGY9qH8xIbhGAat0XJWTIS1vkZBrlaaGl7r3lKA1OHzj35mDEGCLCwCPQHr1lUk3xqClrLr3ELYaeTzPBav6Z8OMsG3Wo5Eql-qJHb23U9WMPRahLVFjug3PVXM4bI2TfMPtyLANEnQbnF31P6ANA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4">
+<span class="font-label-caps text-[10px] bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded border border-outline/20">A-TIER</span>
+<h3 class="font-headline-md text-headline-md text-white mt-1">SAGE</h3>
+</div>
+<div class="absolute top-4 right-4 bg-background/80 p-1.5 rounded-lg border border-outline/20 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-xl">shield</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Agent Detail Section (Focused on Jett) -->
+<aside class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Main Profile Card -->
+<div class="glass-card rounded-xl p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+<div class="flex items-center gap-4 mb-6 relative">
+<div class="w-16 h-16 rounded-lg bg-surface-container border border-primary/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-weight="fill">bolt</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">DUELIST</span>
+<h2 class="font-headline-lg text-headline-lg text-white">JETT</h2>
+</div>
+<div class="ml-auto">
+<div class="flex flex-col items-center">
+<span class="font-display-xl text-display-xl text-primary leading-none">S</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant tracking-widest">TIER</span>
+</div>
+</div>
+</div>
+<!-- Meta Stats -->
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline/10">
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1">WIN RATE</p>
+<p class="font-stat-value text-stat-value text-data-green">52.4%</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-outline/10">
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1">PICK RATE</p>
+<p class="font-stat-value text-stat-value text-white">12.1%</p>
+</div>
+</div>
+<!-- Abilities -->
+<div class="space-y-4 mb-8">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant border-b border-primary/20 pb-2">TACTICAL ABILITIES</h4>
+<div class="grid grid-cols-4 gap-3">
+<div class="group relative">
+<button class="w-full aspect-square glass-card rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary">cloud_queue</span>
+</button>
+<!-- Tooltip -->
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 p-3 glass-card rounded shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-10">
+<p class="font-label-caps text-[10px] text-primary mb-1">C - CLOUDBURST</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">INSTANTLY throw a projectile that expands into a brief vision-blocking cloud.</p>
+</div>
+</div>
+<div class="group relative">
+<button class="w-full aspect-square glass-card rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary">north_east</span>
+</button>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 p-3 glass-card rounded shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-10">
+<p class="font-label-caps text-[10px] text-primary mb-1">Q - UPDRAFT</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">INSTANTLY propel Jett high into the air.</p>
+</div>
+</div>
+<div class="group relative">
+<button class="w-full aspect-square glass-card rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary transition-all border-primary/50 bg-primary/5">
+<span class="material-symbols-outlined text-primary">double_arrow</span>
+</button>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 p-3 glass-card rounded shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-10">
+<p class="font-label-caps text-[10px] text-primary mb-1">E - TAILWIND (SIGNATURE)</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">ACTIVATE to prepare a dash. Press again to propel Jett in the direction she is moving.</p>
+</div>
+</div>
+<div class="group relative">
+<button class="w-full aspect-square glass-card rounded-lg flex items-center justify-center hover:bg-primary/20 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-primary">change_history</span>
+</button>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 p-3 glass-card rounded shadow-xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity z-10">
+<p class="font-label-caps text-[10px] text-primary mb-1">X - BLADE STORM</p>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">EQUIP a set of highly accurate throwing knives that recharge on kills.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Best Maps -->
+<div class="space-y-4">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant border-b border-primary/20 pb-2">OPTIMAL DEPLOYMENTS (MAPS)</h4>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg group hover:bg-surface-bright/5 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-12 h-8 rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A cinematic wide shot of a futuristic coastal city with blue Mediterranean architecture and high-tech towers under a bright sun. Professional game environment style." src="https://lh3.googleusercontent.com/aida/AP1WRLt_iqrgXCH0PZdg_hPJSQeU6wNxxTIStA3AJNldptQW3TeD9xLSf0qJUQfxO6CJV134B1-RlqYTt97LnN4AOq4cVpXRXGdWavgTzyZ_bDEXicCZMqW9yJ3nL8H3bq4EdVOXz2f_mIuFmXzQzt7Gxjn5GGXaDxiTMsH-XQM_l-xy8fQMZtwKwJ3i0SbmaoVoDKG-_cZrm196I7cQMLpaQta3Gep9khQA863VODAVO2Z7Te9ialPPRRHcoDI"/>
+</div>
+<span class="font-headline-md text-sm text-white">ASCENT</span>
+</div>
+<span class="text-data-green font-stat-value text-sm">58% WR</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg group hover:bg-surface-bright/5 transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-12 h-8 rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sprawling industrial site at the foot of snowy mountains, featuring massive high-tech bunkers and research facilities. Moody atmosphere with heavy shadows and bright snow." src="https://lh3.googleusercontent.com/aida/AP1WRLvEMsPTB1LjgV1pbJ9oKqgDOjekG_ofXWeZfHYu4SVt_IjUpwW7NhxNEAy3lNWoX6qPsz8yb3NW_PkB46ZepFWo7hJLB6pg2wgdu9fcd91lhTEidVrg291DLW9eypBcr3yRz8hKYV8RAl8HhHfPalOQMqAUG7_JAvU-advC8LvttfAUk0ZYFyKbT7jmK-nKfrgXt7J33ziNt66mHUgeL8Wimw6rHzSkvvgw6oxhMFRi6PPR7O5ixHrHdpU"/>
+</div>
+<span class="font-headline-md text-sm text-white">ICEBOX</span>
+</div>
+<span class="text-data-green font-stat-value text-sm">56% WR</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Team Compositions -->
+<div class="glass-card rounded-xl p-6">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant border-b border-primary/20 pb-2 mb-4">RECOMMENDED COMPOSITIONS</h4>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-highest/30 rounded-xl border border-outline/10">
+<div class="flex gap-2 mb-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-xs" data-weight="fill">bolt</span></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline/20 flex items-center justify-center"><span class="material-symbols-outlined text-secondary text-xs">explore</span></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline/20 flex items-center justify-center"><span class="material-symbols-outlined text-secondary text-xs">shield</span></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline/20 flex items-center justify-center"><span class="material-symbols-outlined text-secondary text-xs">visibility_off</span></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline/20 flex items-center justify-center"><span class="material-symbols-outlined text-secondary text-xs">bolt</span></div>
+</div>
+<p class="font-headline-md text-sm text-white mb-1">Standard Pro Meta</p>
+<p class="text-xs text-on-surface-variant">Jett • Sova • Killjoy • Omen • KAY/O</p>
+<div class="mt-3 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 85%"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-on-surface-variant">SYNERGY SCORE</span>
+<span class="text-[10px] text-primary">85%</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-surface-variant/10 py-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto gap-8">
+<p class="font-body-md text-body-md text-on-secondary-container order-2 md:order-1">© 2024 VALORANT NEXUS. ANALYTICS ENGINE POWERED BY RIOT GAMES API.</p>
+<nav class="flex flex-wrap justify-center gap-6 order-1 md:order-2">
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors hover:underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors hover:underline" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors hover:underline" href="#">Discord</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors hover:underline" href="#">Twitter</a>
+<a class="font-body-md text-body-md text-on-secondary-container hover:text-primary transition-colors hover:underline" href="#">Support</a>
+</nav>
+</div>
+</footer>
+<script>
+        // Micro-interactions for ability cards
+        document.querySelectorAll('.group button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'scale(0.95)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'scale(1)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+
+        // Atmospheric glowing cursor effect (lightweight)
+        const glow = document.createElement('div');
+        glow.style.cssText = 'position:fixed;width:400px;height:400px;background:radial-gradient(circle, rgba(255,70,85,0.05) 0%, transparent 70%);pointer-events:none;z-index:1;border-radius:50%;transform:translate(-50%,-50%);transition: opacity 0.3s;';
+        document.body.appendChild(glow);
+
+        window.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    </script>
+</body></html>
+
