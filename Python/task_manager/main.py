@@ -72,7 +72,9 @@ while (True):
             try:
                 with open("task.json","w") as writeFile:
                     json.dump(content,writeFile,indent=4)
-                    print("File is successfully saved..... ")
+                    print("File is successfully saved")
+                    print("Exiting..........")
+                    break
             except:
                 print("File Write was not successful!!")
             break
