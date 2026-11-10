@@ -1,4 +1,5 @@
 #include <iostream>
+#include <utility>
 
 using namespace std;
 
@@ -10,13 +11,10 @@ void printArray(const int arr[],int n){
 }
 
 void bubbleSort(int arr[],int n){
-  int temp;
   for (int i=0; i<n ; i++){
     for (int j=0; j<n-i-1; j++){
       if (arr[j]>arr[j+1]){
-        temp = arr[j];
-        arr[j] = arr[j+1];
-        arr[j+1] = temp;
+        swap(arr[j],arr[j+1]);
       }
     }
   }
@@ -27,12 +25,12 @@ int main () {
 
   int n = sizeof(arr)/sizeof(arr[0]);
 
-  cout << "Before:" ;
+  cout << "Before:\n" ;
   printArray(arr,n);
 
   bubbleSort(arr, n);
 
-  cout << "After:" ;
+  cout << "After:\n" ;
   printArray(arr,n);
 
   return 0;

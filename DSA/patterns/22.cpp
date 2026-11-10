@@ -26,7 +26,7 @@ int main () {
       left=j;
       right=2*n-2-j;
       bottom=2*n-2-i;
-      cout << (n-min(min(left,bottom),min(right,top)));
+      cout << (n-min(min(left,bottom),min(right,top))) << " ";
     }
 
     cout << endl;

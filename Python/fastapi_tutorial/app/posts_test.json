@@ -1,0 +1,26 @@
+{
+  "1": {
+    "title": "Sweets",
+    "content": "Mom made chakki for rakshabandhan",
+    "published": true,
+    "id": 1
+  },
+  "15855": {
+    "title": "Festival",
+    "content": "Today we celebrated rakshbandhan",
+    "published": true,
+    "id": 15855
+  },
+  "13701": {
+    "title": "Festival",
+    "content": "Today is janma-ashtami",
+    "published": true,
+    "id": 13701
+  },
+  "6930": {
+    "title": "Occasion",
+    "content": "Tomorrow is Teacher's Day",
+    "published": false,
+    "id": 6930
+  }
+}
